@@ -47,12 +47,12 @@ namespace JSONFactory
 		BeatmapEvent narrativeEvent = JsonMapper.ToObject<BeatmapEvent> (jsonString);
 			return narrativeEvent;
 		}
-	public static void SaveBeatmapToJson (BeatmapEvent beatMap)
+	public static void SaveBeatmapToJson (BeatmapEvent beatMap, String name)
 	{
 		JsonData json = JsonMapper.ToJson (beatMap);
-		Debug.Log ("json" + json.ToString());
-			Debug.Log ("file path " + Application.dataPath);
-		File.WriteAllText(Application.dataPath+"/Resources/achievement.json",json.ToString());
+		//Debug.Log ("json" + json.ToString());
+			//Debug.Log ("file path " + Application.dataPath);
+		File.WriteAllText(Application.dataPath+"/Resources/"+name+".json",json.ToString());
 		//	string jsonString = text.text;
 		//	Dictionary<string,Achievement> achievementDictionary = JsonMapper.ToObject<Dictionary<string,Achievement>> (jsonString);
 		//	return achievementDictionary;
