@@ -47,6 +47,13 @@ namespace JSONFactory
 		BeatmapEvent narrativeEvent = JsonMapper.ToObject<BeatmapEvent> (jsonString);
 			return narrativeEvent;
 		}
+
+	public static BeatmapEvent RunJSONFactoryForBeatmap (String name)
+	{
+		string jsonString = File.ReadAllText(Application.dataPath+"/Resources/"+name+".json");
+		BeatmapEvent narrativeEvent = JsonMapper.ToObject<BeatmapEvent> (jsonString);
+		return narrativeEvent;
+	}
 	public static void SaveBeatmapToJson (BeatmapEvent beatMap, String name)
 	{
 		JsonData json = JsonMapper.ToJson (beatMap);
