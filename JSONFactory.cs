@@ -50,7 +50,7 @@ namespace JSONFactory
 
 	public static BeatmapEvent RunJSONFactoryForBeatmap (String name)
 	{
-		string jsonString = File.ReadAllText(Application.dataPath+"/Resources/"+name+".json");
+		string jsonString = File.ReadAllText(Application.dataPath+"/Resources/music/"+name+".json");
 		BeatmapEvent narrativeEvent = JsonMapper.ToObject<BeatmapEvent> (jsonString);
 		return narrativeEvent;
 	}
@@ -59,7 +59,7 @@ namespace JSONFactory
 		JsonData json = JsonMapper.ToJson (beatMap);
 		//Debug.Log ("json" + json.ToString());
 			//Debug.Log ("file path " + Application.dataPath);
-		File.WriteAllText(Application.dataPath+"/Resources/"+name+".json",json.ToString());
+		File.WriteAllText(Application.dataPath+"/Resources/music/"+name+".json",json.ToString());
 		//	string jsonString = text.text;
 		//	Dictionary<string,Achievement> achievementDictionary = JsonMapper.ToObject<Dictionary<string,Achievement>> (jsonString);
 		//	return achievementDictionary;
